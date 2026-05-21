@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsOrder - WhatsApp Order Management Sri Lanka</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: #25D366;
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        .hero {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background: #ffffff;
+            color: #25D366;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: transform 0.3s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        .features {
+            padding: 60px 0;
+            background: #f9f9f9;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .feature-card h3 {
+            margin: 15px 0;
+            color: #25D366;
+        }
+        .pricing {
+            padding: 60px 0;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .pricing-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .pricing-card h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .price {
+            font-size: 36px;
+            color: #25D366;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .pricing-card ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        .pricing-card li {
+            padding: 8px 0;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h2>📱 WhatsOrder</h2>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Turn WhatsApp Chats Into Organized Orders</h1>
+            <p>Stop losing orders. Stop manual chaos. Start growing.</p>
+            <p style="font-size: 18px; margin: 20px 0;">🎯 Used by clothing shops, cake shops & pharmacies in Sri Lanka</p>
+            <a href="https://wa.me/9477XXXXXXX?text=Hi%2C%20I%20want%20to%20start%20free%20trial" class="btn">Start Free 14-Day Trial →</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 style="text-align: center;">What You Get</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div style="font-size: 48px;">📦</div>
+                    <h3>Order Log</h3>
+                    <p>All orders in one dashboard. No more searching through 100 chats.</p>
+                </div>
+                <div class="feature-card">
+                    <div style="font-size: 48px;">👥</div>
+                    <h3>Customer Database</h3>
+                    <p>Names, phone numbers, addresses automatically saved.</p>
+                </div>
+                <div class="feature-card">
+                    <div style="font-size: 48px;">🚚</div>
+                    <h3>Delivery Tracker</h3>
+                    <p>Know exactly which orders are processing, packed, or delivered.</p>
+                </div>
+                <div class="feature-card">
+                    <div style="font-size: 48px;">💰</div>
+                    <h3>Payment Reminders</h3>
+                    <p>Auto-templates to remind customers about pending payments.</p>
+                </div>
+                <div class="feature-card">
+                    <div style="font-size: 48px;">📄</div>
+                    <h3>Invoice Generator</h3>
+                    <p>Create professional PDF invoices in 1 click.</p>
+                </div>
+                <div class="feature-card">
+                    <div style="font-size: 48px;">📊</div>
+                    <h3>Analytics</h3>
+                    <p>See your monthly revenue, top products, and repeat customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <h2 style="text-align: center;">Simple Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <div class="price">LKR 3,500</div>
+                    <p>per month</p>
+                    <ul>
+                        <li>✅ 100 orders/month</li>
+                        <li>✅ Customer database</li>
+                        <li>✅ Delivery tracking</li>
+                        <li>✅ Email support</li>
+                        <li>❌ Auto reminders</li>
+                        <li>❌ Invoice generator</li>
+                    </ul>
+                    <a href="https://wa.me/9477XXXXXXX?text=Basic%20Plan%20Trial" class="btn" style="background: #25D366; color: white;">Get Basic</a>
+                </div>
+                <div class="pricing-card" style="border: 2px solid #25D366;">
+                    <div style="background: #25D366; color: white; padding: 5px; border-radius: 5px; margin-top: -45px; margin-bottom: 20px; width: 80%; margin-left: auto; margin-right: auto;">🔥 Most Popular</div>
+                    <h3>Pro</h3>
+                    <div class="price">LKR 7,500</div>
+                    <p>per month</p>
+                    <ul>
+                        <li>✅ Unlimited orders</li>
+                        <li>✅ Customer database</li>
+                        <li>✅ Delivery tracking</li>
+                        <li>✅ Priority support</li>
+                        <li>✅ Auto payment reminders</li>
+                        <li>✅ Invoice generator</li>
+                        <li>✅ WhatsApp API ready</li>
+                    </ul>
+                    <a href="https://wa.me/9477XXXXXXX?text=Pro%20Plan%20Trial" class="btn" style="background: #25D366; color: white;">Get Pro</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 40px;">🎯 Free 14-day trial. No credit card needed. Cancel anytime.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>📱 WhatsOrder Sri Lanka</p>
+            <p>Made for Sri Lankan small businesses 🇱🇰</p>
+            <p style="margin-top: 20px;">© 2026 WhatsOrder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/9477XXXXXXX?text=Hi%2C%20I%20want%20to%20learn%20more%20about%20WhatsOrder" class="whatsapp-btn">
+        💬 Chat on WhatsApp
+    </a>
+</body>
+</html>
