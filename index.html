@@ -53,6 +53,9 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .nav-links {
@@ -81,6 +84,8 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .btn-outline:hover {
@@ -211,8 +216,10 @@
         }
 
         .problem-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            color: #e53e3e;
         }
 
         .problem-card h3 {
@@ -248,8 +255,10 @@
         }
 
         .feature-icon {
-            font-size: 40px;
+            width: 48px;
+            height: 48px;
             margin-bottom: 20px;
+            color: #25D366;
         }
 
         .feature-card h3 {
@@ -466,8 +475,10 @@
         }
 
         .whatsapp-float a {
-            font-size: 32px;
+            font-size: 28px;
             text-decoration: none;
+            color: white;
+            font-weight: bold;
         }
 
         @media (max-width: 768px) {
@@ -492,7 +503,13 @@
 <header class="header">
     <div class="container">
         <div class="header-content">
-            <div class="logo">📱 WhatsOrder</div>
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="#25D366"/>
+                    <path d="M16.5 11.5L10.5 7.5C10.2 7.3 9.8 7.3 9.5 7.5C9.2 7.7 9 8 9 8.5V15.5C9 16 9.2 16.3 9.5 16.5C9.7 16.6 9.9 16.7 10.1 16.7C10.3 16.7 10.5 16.6 10.7 16.5L16.7 12.5C17 12.3 17.1 12 17.1 11.7C17.1 11.3 16.8 11.1 16.5 11.5Z" fill="#25D366"/>
+                </svg>
+                WhatsOrder
+            </div>
             <div class="nav-links">
                 <a href="#">Home</a>
                 <a href="#features">Features</a>
@@ -509,7 +526,7 @@
     <div class="container">
         <div class="hero-grid">
             <div>
-                <div class="hero-badge">🇱🇰 Made for Sri Lankan Businesses</div>
+                <div class="hero-badge">Made for Sri Lankan Businesses</div>
                 <h1>Turn WhatsApp Chats Into <span style="color: #25D366;">Organized Orders</span></h1>
                 <p>Stop losing orders in endless chats. Get a simple dashboard to manage orders, customers, deliveries, and payments — all from one place.</p>
                 <a href="https://wa.me/9477XXXXXXX?text=Hi%2C%20I%20want%20to%20start%20free%20trial" class="btn-primary">Start 14-Day Free Trial →</a>
@@ -529,7 +546,13 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div style="font-size: 80px;">📊</div>
+                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="4" width="18" height="16" rx="2" stroke="#25D366" stroke-width="1.5" fill="white"/>
+                    <path d="M8 2V6M16 2V6M3 10H21" stroke="#25D366" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="12" cy="15" r="1.5" fill="#25D366"/>
+                    <circle cx="16" cy="15" r="1.5" fill="#25D366"/>
+                    <circle cx="8" cy="15" r="1.5" fill="#25D366"/>
+                </svg>
                 <p style="margin-top: 20px;"><strong>Orders at a glance</strong><br>One dashboard. No chaos.</p>
             </div>
         </div>
@@ -543,17 +566,32 @@
         <p class="section-subtitle">You're losing time AND money without knowing it</p>
         <div class="problem-grid">
             <div class="problem-card">
-                <div class="problem-icon">💬</div>
+                <div class="problem-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" stroke="#e53e3e" stroke-width="1.5" fill="none"/>
+                        <circle cx="8" cy="10" r="1.5" fill="#e53e3e"/>
+                        <circle cx="12" cy="10" r="1.5" fill="#e53e3e"/>
+                        <circle cx="16" cy="10" r="1.5" fill="#e53e3e"/>
+                    </svg>
+                </div>
                 <h3>100+ Chats = Chaos</h3>
                 <p>Orders, addresses, and payments scattered across dozens of conversations.</p>
             </div>
             <div class="problem-card">
-                <div class="problem-icon">😠</div>
+                <div class="problem-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 8V12L15 15M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#e53e3e" stroke-width="1.5" fill="none"/>
+                    </svg>
+                </div>
                 <h3>Angry Customers</h3>
                 <p>Forgot an order? Missed a delivery? Customers never forget.</p>
             </div>
             <div class="problem-card">
-                <div class="problem-icon">💰</div>
+                <div class="problem-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 1V23M17 5H9.5C8.1 5 7 6.1 7 7.5C7 8.9 8.1 10 9.5 10H14.5C15.9 10 17 11.1 17 12.5C17 13.9 15.9 15 14.5 15H7M12 5V23" stroke="#e53e3e" stroke-width="1.5" fill="none"/>
+                    </svg>
+                </div>
                 <h3>Lost Revenue</h3>
                 <p>Every missed message = lost sale. Every late delivery = lost trust.</p>
             </div>
@@ -568,32 +606,71 @@
         <p class="section-subtitle">Simple, powerful tools to run your business like a pro</p>
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">📦</div>
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="4" width="18" height="16" rx="2" stroke="#25D366" stroke-width="1.5"/>
+                        <path d="M8 2V6M16 2V6M3 10H21" stroke="#25D366" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="12" cy="15" r="1.5" fill="#25D366"/>
+                        <circle cx="16" cy="15" r="1.5" fill="#25D366"/>
+                        <circle cx="8" cy="15" r="1.5" fill="#25D366"/>
+                    </svg>
+                </div>
                 <h3>Order Dashboard</h3>
                 <p>All orders in one table. Filter by status, date, or customer. Never miss an order again.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">👥</div>
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 21V19C20 16.8 18.2 15 16 15H8C5.8 15 4 16.8 4 19V21" stroke="#25D366" stroke-width="1.5" fill="none"/>
+                        <circle cx="12" cy="7" r="4" stroke="#25D366" stroke-width="1.5" fill="none"/>
+                        <path d="M17 3.5C18.5 4 20 5.5 20 8" stroke="#25D366" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M7 3.5C5.5 4 4 5.5 4 8" stroke="#25D366" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
                 <h3>Customer Database</h3>
                 <p>Auto-save customer names, phone numbers, and addresses. Track repeat buyers.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🚚</div>
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#25D366" stroke-width="1.5" fill="none"/>
+                        <path d="M2 17L12 22L22 17" stroke="#25D366" stroke-width="1.5" fill="none"/>
+                        <path d="M2 12L12 17L22 12" stroke="#25D366" stroke-width="1.5" fill="none"/>
+                    </svg>
+                </div>
                 <h3>Delivery Tracking</h3>
                 <p>Update status: New → Processing → Dispatched → Delivered. Customers see updates instantly.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">💰</div>
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="9" stroke="#25D366" stroke-width="1.5" fill="none"/>
+                        <path d="M12 8V12L14 14" stroke="#25D366" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M4 4L8 8M20 4L16 8" stroke="#25D366" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
                 <h3>Payment Reminders</h3>
                 <p>Auto-send reminders for pending payments. Reduce forgetful customers.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">📄</div>
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="3" width="20" height="18" rx="2" stroke="#25D366" stroke-width="1.5" fill="none"/>
+                        <path d="M8 7H16M8 11H12" stroke="#25D366" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M18 15H6" stroke="#25D366" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M18 18L6 18" stroke="#25D366" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
                 <h3>Invoice Generator</h3>
                 <p>Create professional PDF invoices in one click. Branded with your logo.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">📈</div>
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3" stroke="#25D366" stroke-width="1.5" fill="none"/>
+                        <path d="M12 7V12L15 15M19 3V9M16 6H22" stroke="#25D366" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
                 <h3>Sales Analytics</h3>
                 <p>See revenue, top products, peak hours, and customer insights.</p>
             </div>
@@ -623,7 +700,7 @@
                 <a href="https://wa.me/9477XXXXXXX?text=I%20want%20Basic%20plan%20trial" class="btn-outline" style="display: block; text-align: center;">Start Free Trial</a>
             </div>
             <div class="pricing-card popular">
-                <div class="popular-badge">🔥 Most Popular</div>
+                <div class="popular-badge">Most Popular</div>
                 <h3>Pro</h3>
                 <div class="price">LKR 7,500</div>
                 <div class="price-period">per month</div>
@@ -639,7 +716,7 @@
                 <a href="https://wa.me/9477XXXXXXX?text=I%20want%20Pro%20plan%20trial" class="btn-primary" style="display: block; text-align: center;">Start Free Trial</a>
             </div>
         </div>
-        <p style="text-align: center; margin-top: 32px; color: #718096;">✨ Free 14-day trial. No credit card required. Cancel anytime.</p>
+        <p style="text-align: center; margin-top: 32px; color: #718096;">Free 14-day trial. No credit card required. Cancel anytime.</p>
     </div>
 </section>
 
@@ -701,14 +778,14 @@
             </div>
         </div>
         <div class="copyright">
-            © 2026 WhatsOrder. Made in Sri Lanka 🇱🇰 for Sri Lankan businesses.
+            © 2026 WhatsOrder. Made in Sri Lanka for Sri Lankan businesses.
         </div>
     </div>
 </footer>
 
 <!-- WhatsApp Float Button -->
 <div class="whatsapp-float">
-    <a href="https://wa.me/9477XXXXXXX?text=Hi%2C%20I%20want%20to%20learn%20more%20about%20WhatsOrder" style="color: white;">💬</a>
+    <a href="https://wa.me/9477XXXXXXX?text=Hi%2C%20I%20want%20to%20learn%20more%20about%20WhatsOrder">💬</a>
 </div>
 
 </body>
