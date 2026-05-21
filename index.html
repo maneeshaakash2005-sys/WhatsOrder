@@ -3,245 +3,713 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsOrder - WhatsApp Order Management Sri Lanka</title>
+    <meta name="description" content="WhatsOrder – WhatsApp order management system for Sri Lankan small businesses. Organize orders, track deliveries, manage customers, and send invoices.">
+    <title>WhatsOrder | WhatsApp Order Management for Sri Lanka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: #1a1a2e;
+            background: #ffffff;
         }
+
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 32px;
         }
-        header {
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            z-index: 1000;
+            padding: 16px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #25D366;
+        }
+
+        .btn-outline {
+            border: 2px solid #25D366;
+            background: transparent;
+            padding: 8px 20px;
+            border-radius: 30px;
+            color: #25D366;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
             background: #25D366;
             color: white;
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
         }
+
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #25D36620;
+            color: #128C7E;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #1a1a2e;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #4a5568;
+            margin-bottom: 32px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #25D366;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #718096;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
-            padding: 100px 0 60px;
+            padding: 14px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 14px rgba(37,211,102,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+        }
+
+        .hero-image {
+            background: linear-gradient(135deg, #25D36615, #128C7E15);
+            border-radius: 30px;
+            padding: 40px;
             text-align: center;
         }
-        .hero h1 {
+
+        /* Problem Section */
+        .problem {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #718096;
+            font-size: 18px;
+            margin-bottom: 48px;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .problem-card {
+            background: #f7fafc;
+            padding: 32px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .problem-icon {
             font-size: 48px;
             margin-bottom: 20px;
         }
-        .btn {
-            display: inline-block;
-            background: #ffffff;
-            color: #25D366;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: transform 0.3s;
+
+        .problem-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #e53e3e;
         }
-        .btn:hover {
-            transform: scale(1.05);
-        }
+
+        /* Features */
         .features {
-            padding: 60px 0;
-            background: #f9f9f9;
+            padding: 80px 0;
+            background: #f7fafc;
         }
+
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
         }
+
         .feature-card {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 32px;
+            border-radius: 20px;
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
         }
-        .feature-card h3 {
-            margin: 15px 0;
-            color: #25D366;
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #25D366;
         }
-        .pricing {
-            padding: 60px 0;
-        }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .pricing-card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        .pricing-card h3 {
-            font-size: 28px;
+
+        .feature-icon {
+            font-size: 40px;
             margin-bottom: 20px;
         }
-        .price {
-            font-size: 36px;
-            color: #25D366;
-            font-weight: bold;
-            margin: 20px 0;
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #1a1a2e;
         }
-        .pricing-card ul {
-            list-style: none;
-            margin: 20px 0;
+
+        .feature-card p {
+            color: #718096;
         }
-        .pricing-card li {
-            padding: 8px 0;
+
+        /* Pricing */
+        .pricing {
+            padding: 80px 0;
+            background: white;
         }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 60px;
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
+
+        .pricing-card {
+            background: #f7fafc;
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .pricing-card.popular {
+            border-color: #25D366;
+            background: linear-gradient(135deg, #ffffff, #f0fdf4);
+            position: relative;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
             background: #25D366;
             color: white;
-            padding: 12px 20px;
-            border-radius: 50px;
-            text-decoration: none;
+            padding: 4px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .price {
+            font-size: 48px;
+            font-weight: 700;
+            color: #25D366;
+            margin-bottom: 8px;
+        }
+
+        .price-period {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 32px 0;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .check {
+            color: #25D366;
             font-weight: bold;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: #f7fafc;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 32px;
+            border-radius: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            color: #4a5568;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .testimonial-business {
+            font-size: 14px;
+            color: #25D366;
+        }
+
+        /* CTA */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        .btn-cta {
+            background: #25D366;
+            color: #1a1a2e;
+            padding: 14px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 48px 0 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #a0aec0;
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .footer-col a:hover {
+            color: #25D366;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid #2d3748;
+            color: #a0aec0;
+            font-size: 14px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
             z-index: 1000;
         }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float a {
+            font-size: 32px;
+            text-decoration: none;
+        }
+
         @media (max-width: 768px) {
+            .hero-grid, .problem-grid, .features-grid, .pricing-grid, .testimonial-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
             .hero h1 {
                 font-size: 32px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .container {
+                padding: 0 20px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h2>📱 WhatsOrder</h2>
-        </div>
-    </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Turn WhatsApp Chats Into Organized Orders</h1>
-            <p>Stop losing orders. Stop manual chaos. Start growing.</p>
-            <p style="font-size: 18px; margin: 20px 0;">🎯 Used by clothing shops, cake shops & pharmacies in Sri Lanka</p>
-            <a href="https://wa.me/9477XXXXXXX?text=Hi%2C%20I%20want%20to%20start%20free%20trial" class="btn">Start Free 14-Day Trial →</a>
-        </div>
-    </section>
-
-    <section class="features">
-        <div class="container">
-            <h2 style="text-align: center;">What You Get</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div style="font-size: 48px;">📦</div>
-                    <h3>Order Log</h3>
-                    <p>All orders in one dashboard. No more searching through 100 chats.</p>
-                </div>
-                <div class="feature-card">
-                    <div style="font-size: 48px;">👥</div>
-                    <h3>Customer Database</h3>
-                    <p>Names, phone numbers, addresses automatically saved.</p>
-                </div>
-                <div class="feature-card">
-                    <div style="font-size: 48px;">🚚</div>
-                    <h3>Delivery Tracker</h3>
-                    <p>Know exactly which orders are processing, packed, or delivered.</p>
-                </div>
-                <div class="feature-card">
-                    <div style="font-size: 48px;">💰</div>
-                    <h3>Payment Reminders</h3>
-                    <p>Auto-templates to remind customers about pending payments.</p>
-                </div>
-                <div class="feature-card">
-                    <div style="font-size: 48px;">📄</div>
-                    <h3>Invoice Generator</h3>
-                    <p>Create professional PDF invoices in 1 click.</p>
-                </div>
-                <div class="feature-card">
-                    <div style="font-size: 48px;">📊</div>
-                    <h3>Analytics</h3>
-                    <p>See your monthly revenue, top products, and repeat customers.</p>
-                </div>
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">📱 WhatsOrder</div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#testimonials">Success Stories</a>
+                <a href="https://wa.me/9477XXXXXXX?text=Hi%2C%20I%20want%20to%20start%20free%20trial" class="btn-outline">Start Free Trial</a>
             </div>
         </div>
-    </section>
+    </div>
+</header>
 
-    <section class="pricing">
-        <div class="container">
-            <h2 style="text-align: center;">Simple Pricing</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Basic</h3>
-                    <div class="price">LKR 3,500</div>
-                    <p>per month</p>
-                    <ul>
-                        <li>✅ 100 orders/month</li>
-                        <li>✅ Customer database</li>
-                        <li>✅ Delivery tracking</li>
-                        <li>✅ Email support</li>
-                        <li>❌ Auto reminders</li>
-                        <li>❌ Invoice generator</li>
-                    </ul>
-                    <a href="https://wa.me/9477XXXXXXX?text=Basic%20Plan%20Trial" class="btn" style="background: #25D366; color: white;">Get Basic</a>
-                </div>
-                <div class="pricing-card" style="border: 2px solid #25D366;">
-                    <div style="background: #25D366; color: white; padding: 5px; border-radius: 5px; margin-top: -45px; margin-bottom: 20px; width: 80%; margin-left: auto; margin-right: auto;">🔥 Most Popular</div>
-                    <h3>Pro</h3>
-                    <div class="price">LKR 7,500</div>
-                    <p>per month</p>
-                    <ul>
-                        <li>✅ Unlimited orders</li>
-                        <li>✅ Customer database</li>
-                        <li>✅ Delivery tracking</li>
-                        <li>✅ Priority support</li>
-                        <li>✅ Auto payment reminders</li>
-                        <li>✅ Invoice generator</li>
-                        <li>✅ WhatsApp API ready</li>
-                    </ul>
-                    <a href="https://wa.me/9477XXXXXXX?text=Pro%20Plan%20Trial" class="btn" style="background: #25D366; color: white;">Get Pro</a>
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div>
+                <div class="hero-badge">🇱🇰 Made for Sri Lankan Businesses</div>
+                <h1>Turn WhatsApp Chats Into <span style="color: #25D366;">Organized Orders</span></h1>
+                <p>Stop losing orders in endless chats. Get a simple dashboard to manage orders, customers, deliveries, and payments — all from one place.</p>
+                <a href="https://wa.me/9477XXXXXXX?text=Hi%2C%20I%20want%20to%20start%20free%20trial" class="btn-primary">Start 14-Day Free Trial →</a>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Businesses Trust Us</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2,000+</div>
+                        <div class="stat-label">Orders Managed</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Customer Retention</div>
+                    </div>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 40px;">🎯 Free 14-day trial. No credit card needed. Cancel anytime.</p>
+            <div class="hero-image">
+                <div style="font-size: 80px;">📊</div>
+                <p style="margin-top: 20px;"><strong>Orders at a glance</strong><br>One dashboard. No chaos.</p>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <div class="container">
-            <p>📱 WhatsOrder Sri Lanka</p>
-            <p>Made for Sri Lankan small businesses 🇱🇰</p>
-            <p style="margin-top: 20px;">© 2026 WhatsOrder. All rights reserved.</p>
+<!-- Problem Section -->
+<section class="problem">
+    <div class="container">
+        <h2 class="section-title">The WhatsApp Order Nightmare</h2>
+        <p class="section-subtitle">You're losing time AND money without knowing it</p>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="problem-icon">💬</div>
+                <h3>100+ Chats = Chaos</h3>
+                <p>Orders, addresses, and payments scattered across dozens of conversations.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">😠</div>
+                <h3>Angry Customers</h3>
+                <p>Forgot an order? Missed a delivery? Customers never forget.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">💰</div>
+                <h3>Lost Revenue</h3>
+                <p>Every missed message = lost sale. Every late delivery = lost trust.</p>
+            </div>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <a href="https://wa.me/9477XXXXXXX?text=Hi%2C%20I%20want%20to%20learn%20more%20about%20WhatsOrder" class="whatsapp-btn">
-        💬 Chat on WhatsApp
-    </a>
+<!-- Features -->
+<section id="features" class="features">
+    <div class="container">
+        <h2 class="section-title">Everything You Need to Scale</h2>
+        <p class="section-subtitle">Simple, powerful tools to run your business like a pro</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📦</div>
+                <h3>Order Dashboard</h3>
+                <p>All orders in one table. Filter by status, date, or customer. Never miss an order again.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Customer Database</h3>
+                <p>Auto-save customer names, phone numbers, and addresses. Track repeat buyers.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3>Delivery Tracking</h3>
+                <p>Update status: New → Processing → Dispatched → Delivered. Customers see updates instantly.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Payment Reminders</h3>
+                <p>Auto-send reminders for pending payments. Reduce forgetful customers.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h3>Invoice Generator</h3>
+                <p>Create professional PDF invoices in one click. Branded with your logo.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Sales Analytics</h3>
+                <p>See revenue, top products, peak hours, and customer insights.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="pricing">
+    <div class="container">
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <p class="section-subtitle">Start free. Upgrade when you grow. No hidden fees.</p>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Basic</h3>
+                <div class="price">LKR 3,500</div>
+                <div class="price-period">per month</div>
+                <ul class="pricing-features">
+                    <li><span class="check">✓</span> 100 orders/month</li>
+                    <li><span class="check">✓</span> Customer database</li>
+                    <li><span class="check">✓</span> Delivery tracking</li>
+                    <li><span class="check">✓</span> Email support</li>
+                    <li><span class="check">✓</span> Basic reports</li>
+                    <li><span style="color: #cbd5e0;">✗</span> Payment reminders</li>
+                    <li><span style="color: #cbd5e0;">✗</span> Invoice generator</li>
+                </ul>
+                <a href="https://wa.me/9477XXXXXXX?text=I%20want%20Basic%20plan%20trial" class="btn-outline" style="display: block; text-align: center;">Start Free Trial</a>
+            </div>
+            <div class="pricing-card popular">
+                <div class="popular-badge">🔥 Most Popular</div>
+                <h3>Pro</h3>
+                <div class="price">LKR 7,500</div>
+                <div class="price-period">per month</div>
+                <ul class="pricing-features">
+                    <li><span class="check">✓</span> Unlimited orders</li>
+                    <li><span class="check">✓</span> Customer database</li>
+                    <li><span class="check">✓</span> Delivery tracking</li>
+                    <li><span class="check">✓</span> Priority WhatsApp support</li>
+                    <li><span class="check">✓</span> Auto payment reminders</li>
+                    <li><span class="check">✓</span> Invoice generator</li>
+                    <li><span class="check">✓</span> WhatsApp API ready</li>
+                </ul>
+                <a href="https://wa.me/9477XXXXXXX?text=I%20want%20Pro%20plan%20trial" class="btn-primary" style="display: block; text-align: center;">Start Free Trial</a>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 32px; color: #718096;">✨ Free 14-day trial. No credit card required. Cancel anytime.</p>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="testimonials">
+    <div class="container">
+        <h2 class="section-title">Trusted by Sri Lankan Business Owners</h2>
+        <p class="section-subtitle">Real results from real businesses like yours</p>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-text">"WhatsOrder saved me at least 10 hours per week. No more lost orders. My customers love the delivery updates. Best decision I made for my cake shop."</div>
+                <div class="testimonial-author">Amara Perera</div>
+                <div class="testimonial-business">Amara's Cake Corner, Colombo</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">"I used to miss customer messages all the time. Now everything is organized. My revenue increased 30% in 2 months just from not losing orders."</div>
+                <div class="testimonial-author">Nuwan Wijesinghe</div>
+                <div class="testimonial-business">Nuwan's Clothing, Kandy</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <h2>Ready to stop losing orders?</h2>
+        <p>Join 50+ Sri Lankan businesses already using WhatsOrder</p>
+        <a href="https://wa.me/9477XXXXXXX?text=Hi%2C%20I%20want%20to%20start%20free%20trial" class="btn-cta">Start Your Free Trial →</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>WhatsOrder</h4>
+                <a href="#">Home</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#testimonials">Testimonials</a>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="https://wa.me/9477XXXXXXX">WhatsApp Support</a>
+                <a href="#">Help Center</a>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="https://wa.me/9477XXXXXXX">+94 77 XXX XXXX</a>
+                <a href="#">hello@whatsorder.lk</a>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 WhatsOrder. Made in Sri Lanka 🇱🇰 for Sri Lankan businesses.
+        </div>
+    </div>
+</footer>
+
+<!-- WhatsApp Float Button -->
+<div class="whatsapp-float">
+    <a href="https://wa.me/9477XXXXXXX?text=Hi%2C%20I%20want%20to%20learn%20more%20about%20WhatsOrder" style="color: white;">💬</a>
+</div>
+
 </body>
 </html>
